@@ -48,22 +48,23 @@ const STORE_INFO = {
 /* 🔁 عدّل هنا إذا بدك تظبط اللون بالضبط */
 const PALETTE = `
 :root {
-  --bg:       #FFFFFF;
-  --bg-alt:   #F7F9F9;
+  --bg:       #F7F2EA;
+  --bg-alt:   #EDE5D8;
   --surface:  #FFFFFF;
-  --ink:      #1A1A2E;
-  --ink-soft: #4A5568;
-  --muted:    #8A9BB0;
-  --teal:     #1A7A6E;
-  --teal-d:   #135F56;
-  --teal-l:   #E6F4F2;
-  --teal-m:   #B2D8D4;
+  --card:     #E8DCCB;
+  --ink:      #1F1F1F;
+  --ink-soft: #4A3B2E;
+  --muted:    #9C8873;
+  --teal:     #5A3E2B;
+  --teal-d:   #3E2A1A;
+  --teal-l:   #F0E8DA;
+  --teal-m:   #C9A24A;
   --wa:       #25D366;
   --wa-d:     #1DA851;
-  --star:     #F6A623;
-  --sand:     #E8EFEE;
-  --sand2:    #D0DFDC;
-  --red:      #E53E3E;
+  --star:     #C9A24A;
+  --sand:     #DDD0BC;
+  --sand2:    #C9B99E;
+  --red:      #C0392B;
 }`;
 
 /* ─── ألوان الأقمشة ────────────────────────────────────────────────── */
@@ -384,8 +385,8 @@ ${PALETTE}
 .btn-teal:hover{background:var(--teal-d);transform:translateY(-2px);}
 .btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px -14px rgba(37,211,102,.8);}
 .btn-wa:hover{background:var(--wa-d);transform:translateY(-2px);}
-.btn-outline{background:#fff;color:var(--teal);border:1.5px solid var(--teal);}
-.btn-outline:hover{background:var(--teal-l);}
+.btn-outline{background:#fff;color:var(--teal);border:1.5px solid var(--teal-m);}
+.btn-outline:hover{background:var(--teal-l);border-color:var(--teal);}
 .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--sand2);}
 .btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
 .btn-sm{padding:.55rem .9rem;font-size:.82rem;}
