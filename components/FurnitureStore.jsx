@@ -163,6 +163,35 @@ const SUB_CATS_HE = ["מיטות יהודיות","מיטות זוגיות","מי
 const SUB_CATS_AR = ["تخوت يهودية","تخوت زوجية","تخوت شبابية","مراتب","خزائن","إضافات","رؤوس تخت"];
 
 /* כרטיסי Gallery */
+
+/* ─── أقمشة MERAL (كتالوجات حقيقية) ─── */
+const FABRICS = [
+  { file:"/fabrics/fabric_01.jpeg", name:"Porsho" },
+  { file:"/fabrics/fabric_02.jpeg", name:"Toyota" },
+  { file:"/fabrics/fabric_03.jpeg", name:"Malto" },
+  { file:"/fabrics/fabric_04.jpeg", name:"Faimingo" },
+  { file:"/fabrics/fabric_05.jpeg", name:"Panda" },
+  { file:"/fabrics/fabric_06.jpeg", name:"MERAL Mix" },
+  { file:"/fabrics/fabric_07.jpeg", name:"Beast" },
+  { file:"/fabrics/fabric_08.jpeg", name:"Hope" },
+  { file:"/fabrics/fabric_09.jpeg", name:"Elegent" },
+  { file:"/fabrics/fabric_10.jpeg", name:"Cali" },
+  { file:"/fabrics/fabric_11.jpeg", name:"Collection 11" },
+  { file:"/fabrics/fabric_12.jpeg", name:"Collection 12" },
+  { file:"/fabrics/fabric_13.jpeg", name:"Collection 13" },
+  { file:"/fabrics/fabric_16.jpeg", name:"Collection 16" },
+  { file:"/fabrics/fabric_17.jpeg", name:"Collection 17" },
+  { file:"/fabrics/fabric_18.jpeg", name:"Collection 18" },
+  { file:"/fabrics/fabric_19.jpeg", name:"Collection 19" },
+  { file:"/fabrics/fabric_20.jpeg", name:"Collection 20" },
+  { file:"/fabrics/fabric_21.jpeg", name:"Collection 21" },
+];
+
+const FACTORY_PHOTOS = [
+  { file:"/factory/factory_14.jpeg", name:{ he:"סלון לבן מהמפעל", ar:"صالون أبيض من المصنع" } },
+  { file:"/factory/factory_15.jpeg", name:{ he:"מיטת נוער מהמפעל", ar:"تخت شبابي من المصنع" } },
+];
+
 const GALLERY_IMAGES = [
   "/products/gallery-3.jpeg",
   "/products/gallery-1.jpeg",
@@ -390,7 +419,7 @@ ${PALETTE}
 .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--sand2);}
 .btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
 .btn-sm{padding:.55rem .9rem;font-size:.82rem;}
-.btn-block{width:100%;}
+.btn-block{width:100%;min-height:48px;}
 
 /* card */
 .card{background:var(--surface);border:1px solid var(--sand);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s;}
@@ -512,6 +541,102 @@ ${PALETTE}
   .fab{display:flex!important;}
   .mdl-grid{grid-template-columns:1fr 1fr!important;}
 }
+
+/* ═══════════════════════════════════════════════════
+   MOBILE-FIRST  — كل شي تحت 600px
+═══════════════════════════════════════════════════ */
+@media(max-width:600px){
+
+  /* حجم الخط الأساسي */
+  .r{font-size:15px;}
+
+  /* Header */
+  .hdr .sec{height:56px!important;padding:0 14px!important;}
+
+  /* Hero */
+  .hero{height:clamp(300px,90vw,420px)!important;}
+  .htitle{font-size:clamp(1.5rem,7vw,2.2rem)!important;}
+  .hsub{font-size:.88rem!important;margin-bottom:14px!important;}
+  .hbadge{font-size:.72rem!important;}
+  .htxt{padding:18px 16px 24px!important;}
+  .harr{width:36px!important;height:36px!important;font-size:1.1rem!important;}
+
+  /* Sub-nav */
+  .subnav-inner{gap:5px!important;padding:8px 14px!important;}
+  .snbtn{padding:.3rem .7rem!important;font-size:.76rem!important;}
+
+  /* Sections spacing */
+  .sec{padding:0 14px!important;}
+
+  /* Product grid — 2 cols on phone */
+  #prod-grid{grid-template-columns:repeat(2,1fr)!important;gap:12px!important;}
+
+  /* Product card */
+  .card img, .card .rv img{height:160px!important;}
+  .card h3{font-size:1rem!important;}
+
+  /* Buttons in cards — stack */
+  .card .btn-teal{font-size:.78rem!important;padding:.55rem .6rem!important;}
+
+  /* Filter buttons */
+  #filter-row{gap:5px!important;}
+  #filter-row .btn{padding:.42rem .65rem!important;font-size:.76rem!important;}
+
+  /* Color circles */
+  .clrc{width:48px!important;height:48px!important;}
+
+  /* Modal — full screen on phone */
+  .mdl{border-radius:14px 14px 0 0!important;max-height:96vh!important;}
+  .mdl-grid{grid-template-columns:1fr!important;}
+  .mdl-grid > div:first-child img{height:220px!important;}
+
+  /* Cart drawer */
+  .drw{width:100vw!important;}
+
+  /* Contact form — single col */
+  #ctc-form-grid{grid-template-columns:1fr!important;}
+
+  /* Footer grid */
+  #footer-grid{grid-template-columns:1fr!important;gap:20px!important;}
+
+  /* Value section stats */
+  #val-stats .disp{font-size:1.3rem!important;}
+  #val-stats{padding:16px 12px!important;}
+
+  /* Trust grid */
+  #trust-grid{grid-template-columns:1fr!important;}
+
+  /* Gallery grid */
+  #gallery-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px!important;}
+  #gallery-grid img{height:120px!important;}
+
+  /* Reviews grid */
+  #rev-grid{grid-template-columns:1fr!important;}
+
+  /* Categories grid */
+  #cats-grid{grid-template-columns:1fr!important;}
+
+  /* FAB hide on mobile (bottom bar handles it) */
+  .fab{display:none!important;}
+
+  /* Bottom bar larger touch targets */
+  .btmbar{height:58px!important;}
+  .btmbar a, .btmbar button{font-size:.6rem!important;}
+  .btmbar .lic{font-size:1.2rem!important;}
+
+  /* Tape (meter selector) */
+  .mtr{min-width:44px!important;flex:1 1 44px!important;}
+  .mtr .num{font-size:1rem!important;}
+}
+
+/* Tablet 601-899 */
+@media(min-width:601px) and (max-width:899px){
+  #prod-grid{grid-template-columns:repeat(2,1fr)!important;}
+  #cats-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .mdl-grid{grid-template-columns:1fr!important;}
+  #ctc-form-grid{grid-template-columns:1fr 1fr!important;}
+}
+
 @media(prefers-reduced-motion:reduce){.r *,.rv{transition:none!important;animation:none!important;}.rv{opacity:1;transform:none;}}
 `;
 
@@ -546,7 +671,7 @@ function HeroSlider({ lang, onCatalog }){
         <div className="hbadge">{HERO_SLIDES[cur].badge[lang]}</div>
         <h1 className="htitle disp">{HERO_SLIDES[cur].title[lang]}</h1>
         <p className="hsub">{HERO_SLIDES[cur].sub[lang]}</p>
-        <div style={{ display:"flex", gap:10, flexWrap:"wrap" }}>
+        <div style={{ display:"flex", gap:10, flexWrap:"wrap", alignItems:"center" }}>
           <button className="btn btn-teal" style={{ background:"rgba(255,255,255,.95)", color:"var(--teal)", borderRadius:999 }} onClick={onCatalog}>
             {L.heroBtn1} <Ic.chevL style={{ transform:"scaleX(-1)" }} />
           </button>
@@ -654,9 +779,9 @@ function ValueSection({ lang }){
   return (
     <section style={{ padding:"36px 0" }}>
       <div className="sec">
-        <div className="rv" style={{ display:"grid", gap:20 }} id="val-grid">
+        <div className="rv" style={{ display:"grid", gap:16 }} id="val-grid">
           {/* stats box */}
-          <div style={{ background:"var(--bg-alt)", border:"1px solid var(--sand)", borderRadius:18, padding:"24px 20px" }}>
+          <div id="val-stats" style={{ background:"var(--bg-alt)", border:"1px solid var(--sand)", borderRadius:18, padding:"24px 20px" }}>
             <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:0, marginBottom:20, borderBottom:"1px solid var(--sand)", paddingBottom:18 }}>
               {L.statsRow.map((s,i)=>(
                 <div key={i} style={{ textAlign:"center", borderInlineStart:i?"1px solid var(--sand)":"none" }}>
@@ -729,7 +854,7 @@ function CatalogSec({ lang, filter, setFilter, onOpen, favs, onFav }){
           </div>
           <button className="btn btn-outline btn-sm" onClick={()=>setFilter("all")}>{L.allProducts}</button>
         </div>
-        <div style={{ display:"flex",gap:7,flexWrap:"wrap",marginBottom:26 }}>
+        <div id="filter-row" style={{ display:"flex",gap:7,flexWrap:"wrap",marginBottom:26 }}>
           {cats.map(c=>(
             <button key={c} onClick={()=>setFilter(c)} className="btn btn-sm" style={{ background:filter===c?"var(--teal)":"#fff",color:filter===c?"#fff":"var(--ink-soft)",border:filter===c?"none":"1.5px solid var(--sand)",display:"inline-flex",gap:5 }}>
               {c==="fav"&&<Ic.heart/>}{L.filters[c]}
@@ -738,7 +863,7 @@ function CatalogSec({ lang, filter, setFilter, onOpen, favs, onFav }){
         </div>
         {list.length===0
           ? <div className="card" style={{ textAlign:"center",padding:"44px 20px",color:"var(--muted)" }}><div style={{ fontSize:"2.2rem",marginBottom:8 }}>{filter==="fav"?<Ic.heart/>:<Ic.sofa/>}</div>{filter==="fav"?L.emptyFav:L.empty}</div>
-          : <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:20 }}>
+          : <div id="prod-grid" style={{ display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:20 }}>
               {list.map(p=><PCard key={p.id} p={p} lang={lang} onOpen={onOpen} isFav={favs.includes(p.id)} onFav={onFav}/>)}
             </div>
         }
@@ -784,7 +909,7 @@ function PModal({ p, lang, onClose, onAddCart }){
         </div>
         <div className="mdl-grid" style={{ display:"grid",gridTemplateColumns:"1fr" }}>
           {/* gallery */}
-          <div style={{ padding:18 }}>
+          <div style={{ padding:"14px" }}>
             <Img src={activeImg} alt={p.name[lang]} style={{ width:"100%",height:270,objectFit:"cover",borderRadius:14,border:"1px solid var(--sand)" }}/>
             <div style={{ display:"flex",gap:7,marginTop:9,flexWrap:"wrap" }}>
               {gallery.map((g,i)=>(<button key={i} onClick={()=>setActiveImg(g)} style={{ padding:0,border:activeImg===g?"2px solid var(--teal)":"2px solid transparent",borderRadius:9,overflow:"hidden",cursor:"pointer",background:"none" }}><Img src={g} alt="" style={{ width:58,height:58,objectFit:"cover",borderRadius:7 }}/></button>))}
@@ -792,7 +917,7 @@ function PModal({ p, lang, onClose, onAddCart }){
             <p style={{ color:"var(--ink-soft)",fontSize:".93rem",marginTop:14 }}>{p.desc[lang]}</p>
           </div>
           {/* config */}
-          <div style={{ padding:18,background:"var(--bg-alt)",borderInlineStart:"1px solid var(--sand)" }}>
+          <div style={{ padding:"14px",background:"var(--bg-alt)",borderInlineStart:"1px solid var(--sand)" }}>
             {p.isCustomSize && (
               <div style={{ marginBottom:20 }}>
                 <label style={{ display:"flex",alignItems:"center",gap:6,fontWeight:700,marginBottom:9 }}><Ic.ruler style={{ color:"var(--teal)" }}/>{L.calc.pick}</label>
@@ -879,6 +1004,104 @@ function CartDrawer({ lang, cart, onClose, onRemove }){
   );
 }
 
+
+/* ─── قسم الأقمشة والكتالوجات ──────────────────────────────────────── */
+function FabricsCatalog({ lang }){
+  const L = T[lang];
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <section id="r-colors" style={{ padding:"50px 0", background:"var(--bg-alt)" }}>
+      <div className="sec">
+        <div className="rv" style={{ textAlign:"center", marginBottom:32 }}>
+          <span style={{ fontSize:".73rem", fontWeight:700, color:"var(--teal)", letterSpacing:".1em", textTransform:"uppercase" }}>
+            MERAL Fabrics
+          </span>
+          <h2 className="disp" style={{ fontSize:"clamp(1.5rem,4vw,2.2rem)", margin:"8px 0 8px" }}>
+            {L.colorsTitle}
+          </h2>
+          <p style={{ color:"var(--muted)", maxWidth:560, margin:"0 auto" }}>{L.colorsSub}</p>
+        </div>
+
+        {/* شبكة الأقمشة */}
+        <div className="rv" style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(130px,1fr))", gap:12, marginBottom:40 }}>
+          {FABRICS.map((f,i)=>(
+            <div key={i} onClick={()=>setSelected(f)}
+              style={{ cursor:"pointer", borderRadius:14, overflow:"hidden", border:"2px solid transparent", transition:"all .2s", boxShadow:"0 4px 12px -6px rgba(0,0,0,.2)" }}
+              onMouseEnter={e=>e.currentTarget.style.borderColor="var(--teal-m)"}
+              onMouseLeave={e=>e.currentTarget.style.borderColor="transparent"}
+            >
+              <Img src={f.file} alt={f.name}
+                style={{ width:"100%", height:190, objectFit:"cover", display:"block" }}/>
+              <div style={{ background:"var(--surface)", padding:"7px 10px", fontWeight:700, fontSize:".8rem", textAlign:"center", color:"var(--teal)" }}>
+                {f.name}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* صور المصنع */}
+        {FACTORY_PHOTOS.length > 0 && (
+          <>
+            <div style={{ textAlign:"center", marginBottom:18 }}>
+              <h3 className="disp" style={{ fontSize:"1.4rem", color:"var(--teal)" }}>
+                {lang==="he" ? "ישירות מהמפעל" : "مباشرة من المصنع"}
+              </h3>
+            </div>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))", gap:16, marginBottom:32 }}>
+              {FACTORY_PHOTOS.map((p,i)=>(
+                <div key={i} className="card rv" onClick={()=>setSelected(p)} style={{ cursor:"pointer" }}>
+                  <Img src={p.file} alt={p.name[lang]}
+                    style={{ width:"100%", height:220, objectFit:"cover" }}/>
+                  <div style={{ padding:"12px 16px", fontWeight:700, color:"var(--teal)" }}>{p.name[lang]}</div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* CTA واتساب */}
+        <div className="rv" style={{ textAlign:"center" }}>
+          <p style={{ color:"var(--muted)", marginBottom:14 }}>
+            {lang==="he"
+              ? "רוצים לראות דוגמאות פיזית? צרו קשר עכשיו"
+              : "تريدون ترون عينات على الواقع؟ تواصلوا معنا الآن"}
+          </p>
+          <a className="btn btn-wa" href={waUrl(T[lang].wa.intro)} target="_blank" rel="noreferrer">
+            <Ic.wa/>
+            {lang==="he" ? "שלחו לי דוגמאות" : "أرسل لي عينات"}
+          </a>
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      {selected && (
+        <div onClick={()=>setSelected(null)}
+          style={{ position:"fixed", inset:0, background:"rgba(0,0,0,.85)", zIndex:200,
+                   display:"flex", alignItems:"center", justifyContent:"center", padding:16 }}>
+          <div onClick={e=>e.stopPropagation()}
+            style={{ position:"relative", maxWidth:480, width:"100%", borderRadius:18, overflow:"hidden" }}>
+            <img src={selected.file} alt=""
+              style={{ width:"100%", display:"block", maxHeight:"85vh", objectFit:"contain", background:"#111" }}/>
+            <div style={{ position:"absolute", bottom:0, inset_inline:0, background:"rgba(0,0,0,.6)",
+                          padding:"10px 16px", color:"#fff", fontWeight:700, fontSize:".95rem",
+                          textAlign:"center" }}>
+              {typeof selected.name === "object" ? selected.name[lang] : selected.name}
+            </div>
+            <button onClick={()=>setSelected(null)}
+              style={{ position:"absolute", top:10, insetInlineEnd:10, width:36, height:36,
+                       borderRadius:"50%", background:"rgba(255,255,255,.2)", border:"none",
+                       color:"#fff", cursor:"pointer", fontSize:"1.2rem", display:"flex",
+                       alignItems:"center", justifyContent:"center" }}>
+              <Ic.close/>
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 /* ─── Colors Section ──────────────────────────────────────────────────── */
 function ColorsSec({ lang }){
   const L = T[lang];
@@ -915,7 +1138,7 @@ function ReviewsSec({ lang }){
           <h2 className="disp" style={{ fontSize:"clamp(1.5rem,4vw,2.2rem)",margin:"6px 0 6px" }}>{L.revTitle}</h2>
           <div style={{ display:"flex",alignItems:"center",justifyContent:"center",gap:7 }}><Stars n={5} size="1.1rem"/><span style={{ fontWeight:800,fontSize:"1.05rem" }}>4.9</span><span style={{ color:"var(--muted)",fontSize:".85rem" }}>({lang==="he"?"+178 ביקורות":"+178 تقييم"})</span></div>
         </div>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:16 }}>
+        <div id="rev-grid" style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:16 }}>
           {REVIEWS.map((r,i)=>(
             <div key={i} className="card rv" style={{ padding:"18px 20px",background:"#fff" }}>
               <div style={{ display:"flex",alignItems:"center",gap:8,marginBottom:6 }}>
@@ -942,7 +1165,7 @@ function GallerySec({ lang }){
           <h2 className="disp" style={{ fontSize:"clamp(1.5rem,4vw,2.2rem)",margin:"6px 0 6px" }}>{L.galleryTitle}</h2>
           <p style={{ color:"var(--muted)" }}>{L.gallerySub}</p>
         </div>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(155px,1fr))",gap:10 }}>
+        <div id="gallery-grid" style={{ display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(155px,1fr))",gap:10 }}>
           {GALLERY_IMAGES.map((src,i)=>(<Img key={i} src={src} alt="" className="rv" style={{ width:"100%",height:155,objectFit:"cover",borderRadius:12,border:"1px solid var(--sand)" }}/>))}
         </div>
       </div>
@@ -958,7 +1181,7 @@ function TrustSec({ lang }){
     <section style={{ padding:"46px 0",background:"var(--teal)",color:"#fff" }}>
       <div className="sec">
         <h2 className="disp rv" style={{ textAlign:"center",color:"#fff",fontSize:"clamp(1.5rem,4vw,2.2rem)",marginBottom:28 }}>{L.trustTitle}</h2>
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(230px,1fr))",gap:12 }}>
+        <div id="trust-grid" style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(230px,1fr))",gap:12 }}>
           {L.trust.map((tx,i)=>{ const I=icons[i]||Ic.check; return(
             <div key={i} className="rv" style={{ display:"flex",alignItems:"center",gap:12,background:"rgba(255,255,255,.12)",border:"1px solid rgba(255,255,255,.2)",borderRadius:12,padding:"14px 16px" }}>
               <span style={{ width:40,height:40,borderRadius:10,background:"rgba(255,255,255,.2)",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"1.2rem",flexShrink:0 }}><I/></span>
@@ -1003,7 +1226,7 @@ function ContactSec({ lang }){
           </div>
           {/* form */}
           <div className="card rv" style={{ background:"#fff",padding:"22px 20px" }}>
-            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:12 }}>
+            <div id="ctc-form-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:12 }}>
               <Fld label={L.contactLabels.name}><input className="inp" value={form.name} onChange={set("name")} placeholder={L.contactPH.name}/></Fld>
               <Fld label={L.contactLabels.phone}><input className="inp" value={form.phone} onChange={set("phone")} placeholder={L.contactPH.phone} inputMode="tel"/></Fld>
             </div>
@@ -1027,7 +1250,7 @@ function FooterSec({ lang, onNav }){
   return (
     <footer style={{ background:"var(--ink)",color:"#cdc2b2",padding:"44px 0 26px" }}>
       <div className="sec">
-        <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(190px,1fr))",gap:28,marginBottom:26 }}>
+        <div id="footer-grid" style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(190px,1fr))",gap:28,marginBottom:26 }}>
           <div>
             <div style={{ display:"flex",alignItems:"center",gap:9,marginBottom:13 }}>
               <span style={{ width:36,height:36,borderRadius:9,background:"linear-gradient(135deg,var(--teal),var(--teal-d))",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"1.2rem" }}><Ic.sofa/></span>
@@ -1113,7 +1336,7 @@ export default function FurnitureStore(){
       <HeroSlider lang={lang} onCatalog={()=>scrollTo("r-catalog")}/>
       <ValueSection lang={lang}/>
       <CatalogSec lang={lang} filter={filter} setFilter={setFilter} onOpen={setSelected} favs={favs} onFav={toggleFav}/>
-      <ColorsSec lang={lang}/>
+      <FabricsCatalog lang={lang}/>
       <ReviewsSec lang={lang}/>
       <GallerySec lang={lang}/>
       <TrustSec lang={lang}/>
